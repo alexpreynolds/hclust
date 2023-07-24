@@ -1,11 +1,35 @@
 // get euclidean distance between two equal-dimension vectors
 export const euclideanDistance = (a, b) => {
+  let index = 0;
   const size = Math.min(a.length, b.length);
   let sum = 0;
-  for (let index = 0; index < size; index++)
+  // for (let index = 0; index < size; index++)
+  //   sum += (a[index] - b[index]) * (a[index] - b[index]);
+  while (index < size) {
     sum += (a[index] - b[index]) * (a[index] - b[index]);
+    ++index;
+  }
   return Math.sqrt(sum);
 };
+
+// assuming vectors of binary data
+export const jaccardDistance = (a, b) => {
+  let index = 0;
+  const size = Math.min(a.length, b.length);
+  let intersectionAcc = 0;
+  let unionAcc = 0;
+  while (index < size) {
+    if (a[index] !== b[index]) {
+      ++intersectionAcc;
+    }
+    else if (a[index] !== 0) {
+      ++unionAcc;
+    }
+    ++index;
+  }
+  // if a and b are identical (all zeroes or all ones) then distance is zero
+  return (intersectionAcc !== 0) ? 1 - (unionAcc / (unionAcc + 2*intersectionAcc)) : 0;
+}
 
 // get average distance between sets of indexes, given distance matrix
 export const averageDistance = (setA, setB, distances) => {
