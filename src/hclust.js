@@ -69,7 +69,7 @@ export const clusterData = ({
   key = '',
   distance = euclideanDistance,
   linkage = averageDistance,
-  onProgress = logProgress
+  onProgress = null
 }) => {
   // extract values from specified key
   if (key)
