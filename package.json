@@ -1,6 +1,6 @@
 {
-  "name": "@greenelab/hclust",
-  "version": "0.0.0-dev",
+  "name": "@apr144/hclust",
+  "version": "0.0.1",
   "description": "Agglomerative hierarchical clustering in JavaScript",
   "keywords": [
     "hierarchy",
@@ -13,7 +13,10 @@
   ],
   "author": "Vincent Rubinetti",
   "license": "MIT",
-  "repository": "git+https://github.com/greenelab/hclust.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/greenelab/hclust.git"
+  },
   "main": "./build/hclust.min.js",
   "module": "./build/hclust.min.js",
   "scripts": {
