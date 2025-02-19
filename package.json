@@ -23,7 +23,9 @@
     "test": "bash ./scripts/build.sh && bash ./scripts/test.sh",
     "build": "bash ./scripts/build.sh"
   },
-  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.0",
